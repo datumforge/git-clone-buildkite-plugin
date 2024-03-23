@@ -9,4 +9,6 @@ configuration:
       type: string
     branch:
       type: string
+  required:
+    - repository
   additionalProperties: false
