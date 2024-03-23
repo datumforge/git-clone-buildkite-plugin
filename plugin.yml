@@ -1,14 +1,14 @@
 ---
-name: template-buildkite-plugin
-description: what your plugin does
-author: Datum
-requirements:
-  - if you have requirements
+name: Git clone
+description: Performs a clone of an extra repo in the build step
+author: https://github.com/datumforge
+requirements: []
 configuration:
   properties:
-    propertyname:
+    repository:
       type: string
-  required: []
-    # - if any properties are required
-  dependencies:
-    dependencyname: [dep]
+    branch:
+      type: string
+  required:
+    - repository
+  additionalProperties: false
