@@ -1,14 +1,10 @@
-[![Build status](https://badge.buildkite.com/df549c652f77fa3660f4d7f975fd3bb5744e12fb4066719553.svg?branch=main)](https://buildkite.com/datum/template-buildkite-plugin)
+[![Build status](https://badge.buildkite.com/1751c82941040b420a90c8f54ffe1d09b81231e73f06b875a4.svg)](https://buildkite.com/datum/git-clone-buildkite-plugin)
 
-# Template Buildkite Plugin
+# git-clone
 
-Check the [buildkite organization](https://github.com/buildkite-plugins) or [website](https://buildkite.com/plugins) to see if your plugin already exists or we can contribute to it !
-
-Be sure to update this readme with your plugin information after using the template repository - for more info checkout Buildkite's documentation [here](https://buildkite.com/docs/plugins)
+A buildkite plugin which performs a git clone post-checkout
 
 ## Example
-
-Provide an example of using this plugin, like so:
 
 Add the following to your `pipeline.yml`:
 
@@ -16,21 +12,20 @@ Add the following to your `pipeline.yml`:
 steps:
   - command: ls
     plugins:
-      - a-github-user/template#v1.0.0:
-          pattern: '*.md'
+      - datumforge/git-clone#v1.0.0:
+          repository: git@github.com:datumforge/git-clone-buiodkite-pluginn.git
 ```
+
+Example with branch:
+
+```yml
+steps:
+  - command: ls
+    plugins:
+      - datumforge/git-clone#v1.0.0:
+        branch: mitb
+```  
 
 ## Developing
 
-Provide examples on how to modify and test, e.g.:
-
-To run the linter:
-```shell
-task lint
-```
-
-To run the tests:
-
-```shell
-task test
-```
+Requires [taskfile](https://taskfile.dev/installation/) - `task lint` and `task test` to validate updates to the plugin
